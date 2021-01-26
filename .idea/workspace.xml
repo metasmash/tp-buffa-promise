@@ -20,8 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e6d0d6b-c6da-4ddb-8e76-e5aa33d9838c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ibuffa/.prettierrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ibuffa/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/ibuffa/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ibuffa/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/ibuffa/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ibuffa/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/ibuffa/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ibuffa/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/ibuffa/src/App.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,11 +59,31 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.18.1" />
     <property name="javascript.nodejs.core.library.typings.version" value="12.19.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ibuffa/node_modules/prettier" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+    <property name="prettier.files.pattern" value="{**/*,*}.{js,ts,jsx,tsx,css,scss}" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="C:\git\tp-buffa-promise\ibuffa\node_modules\prettier" />
+    <property name="run.prettier.on.save" value="true" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/ibuffa/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -69,7 +93,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611656372838</updated>
-      <workItem from="1611656374137" duration="1767000" />
+      <workItem from="1611656374137" duration="2470000" />
     </task>
     <task id="LOCAL-00001" summary="gitignore update">
       <created>1611656488328</created>
@@ -92,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611656545278</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="init react app">
+      <created>1611658350142</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1611658350142</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,6 +142,37 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="gitignore update" />
-    <option name="LAST_COMMIT_MESSAGE" value="gitignore update" />
+    <MESSAGE value="init react app" />
+    <option name="LAST_COMMIT_MESSAGE" value="init react app" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2660" y="279" key="FileChooserDialogImpl" timestamp="1611658828740">
+      <screen x="1920" y="4" width="1920" height="1040" />
+    </state>
+    <state x="2660" y="279" key="FileChooserDialogImpl/0.0.1920.1040/1920.4.1920.1040@1920.4.1920.1040" timestamp="1611658828740" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1611658768564">
+      <screen x="1920" y="4" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.4.1920.1040@1920.4.1920.1040" timestamp="1611658768564" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1611658768564">
+      <screen x="1920" y="4" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.4.1920.1040@1920.4.1920.1040" timestamp="1611658768564" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1611658768564">
+      <screen x="1920" y="4" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.4.1920.1040@1920.4.1920.1040" timestamp="1611658768564" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1611658768564">
+      <screen x="1920" y="4" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.4.1920.1040@1920.4.1920.1040" timestamp="1611658768564" />
+    <state x="2381" y="169" key="SettingsEditor" timestamp="1611658851182">
+      <screen x="1920" y="4" width="1920" height="1040" />
+    </state>
+    <state x="2381" y="169" key="SettingsEditor/0.0.1920.1040/1920.4.1920.1040@1920.4.1920.1040" timestamp="1611658851182" />
+    <state x="2587" y="257" width="585" height="534" key="find.popup" timestamp="1611658697661">
+      <screen x="1920" y="4" width="1920" height="1040" />
+    </state>
+    <state x="2587" y="257" width="585" height="534" key="find.popup/0.0.1920.1040/1920.4.1920.1040@1920.4.1920.1040" timestamp="1611658697661" />
   </component>
 </project>
