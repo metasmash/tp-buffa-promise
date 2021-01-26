@@ -10,7 +10,7 @@ const baseURL = 'https://itunes.apple.com/search?country=fr&media=music&term='
 export const getMusicFromSearch = async (search) => {
     try {
         const { data } = await formatSearch(search).then((x) =>
-            axios.get(`${baseURL}${x}`)
+            axios.get(`${baseURL}${x}`, { withCredentials: true })
         )
 
         return _.map(data.results, destructureResults)

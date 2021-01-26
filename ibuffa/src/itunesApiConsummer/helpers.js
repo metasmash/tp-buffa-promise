@@ -12,6 +12,7 @@ export const destructureResults = (results) =>
         previewUrl,
         trackPrice,
         collectionPrice,
+        artworkUrl100,
     }) => ({
         artistName,
         collectionName,
@@ -21,4 +22,5 @@ export const destructureResults = (results) =>
         previewUrl,
         trackPrice,
         collectionPrice,
+        artworkUrl100,
     }))(results)
