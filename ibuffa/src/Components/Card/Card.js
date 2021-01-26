@@ -11,7 +11,7 @@ const useStyles = makeStyles(() => ({
         display: 'flex',
         justifyContent: 'space-between',
         marginTop: 30,
-        marginLeft: 100,
+        marginLeft: 10,
         width: 700,
     },
     details: {
