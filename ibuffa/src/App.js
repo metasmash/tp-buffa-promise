@@ -23,11 +23,11 @@ function App() {
         await getMusicFromSearch(terms)
             .then((x) => {
                 setSearch(x)
-                setIsLoading(false)
+                _.delay(() => setIsLoading(false), 1500)
             })
             .catch((x) => {
                 setSearch([])
-                setIsLoading(false)
+                _.delay(() => setIsLoading(false), 1500)
                 console.log(x)
             })
         return { status: 'done' }
