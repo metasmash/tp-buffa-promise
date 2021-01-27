@@ -108,7 +108,7 @@ function App() {
                 direction="row"
                 justify="center"
                 alignItems="center"
-                style={{ marginTop: 100 }}
+                style={{ marginTop: 100, marginBottom: 50 }}
             >
                 {firstAttempt ? (
                     <Typography color="primary" variant="h3">
