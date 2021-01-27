@@ -83,7 +83,7 @@ export default function MediaControlCard({
                     controls
                 />
 
-                <a href={collectionViewUrl}>
+                <a href={collectionViewUrl} target="_blank" rel="noreferrer">
                     <Typography variant="subtitle1" color="textSecondary">
                         Access the album link
                     </Typography>
