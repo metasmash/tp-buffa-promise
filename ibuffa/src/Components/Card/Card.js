@@ -12,6 +12,7 @@ const useStyles = makeStyles(() => ({
         justifyContent: 'space-between',
         marginTop: 30,
         marginLeft: 10,
+        maxHeight: 176,
         width: 700,
     },
     details: {
@@ -51,7 +52,6 @@ export default function MediaControlCard({
                             textOverflow: 'ellipsis',
                             whiteSpace: 'nowrap',
                         }}
-                        component="h5"
                         variant="h5"
                     >
                         {trackName}

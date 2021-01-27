@@ -1,22 +1,41 @@
 import React, { useState, useEffect } from 'react'
-import { Button, Grid, Input, Typography } from '@material-ui/core'
+import {
+    Button,
+    Grid,
+    Input,
+    Typography,
+    CircularProgress,
+} from '@material-ui/core'
 import { getMusicFromSearch } from './itunesApiConsummer/getSongFromTitle'
 import _ from 'lodash'
 import { Card } from './Components'
 
 function App() {
     const [terms, setTerms] = useState('')
-    const [search, setSearch] = useState()
+    const [search, setSearch] = useState([])
+    const [isLoading, setIsLoading] = useState(false)
+    const [firstAttempt, setFirstAttempt] = useState(true)
+
+    const fetchData = async () => {
+        await setFirstAttempt(false)
+        await setIsLoading(true)
+        await setSearch([])
+        await getMusicFromSearch(terms)
+            .then((x) => {
+                setSearch(x)
+                setIsLoading(false)
+            })
+            .catch((x) => {
+                setSearch([])
+                setIsLoading(false)
+                console.log(x)
+            })
+        return { status: 'done' }
+    }
 
     useEffect(() => {
         console.log('component did mount')
     }, [])
-
-    useEffect(() => {
-        if (search) {
-            console.log(search)
-        }
-    }, [search])
 
     return (
         <div>
@@ -50,13 +69,13 @@ function App() {
                     onChange={(x) => setTerms(x.target.value)}
                     onKeyPress={(x) => {
                         if (x.key === 'Enter') {
-                            getMusicFromSearch(terms).then(setSearch)
+                            fetchData().then(console.log)
                         }
                     }}
                 />
                 <Button
                     onClick={() => {
-                        getMusicFromSearch(terms).then(setSearch)
+                        fetchData().then(console.log)
                     }}
                 >
                     Search
@@ -69,11 +88,17 @@ function App() {
                 alignItems="center"
                 style={{ marginTop: 100 }}
             >
-                {search ? (
+                {firstAttempt ? (
+                    <Typography color="primary" variant="h3">
+                        Search a music (artist, track name,...)
+                    </Typography>
+                ) : isLoading ? (
+                    <CircularProgress />
+                ) : !_.isEmpty(search) ? (
                     _.map(search, (x, key) => <Card key={key} {...x} />)
                 ) : (
-                    <Typography component="colorError" variant="colorError">
-                        No music found
+                    <Typography color="error" variant="h3">
+                        No music found :'(
                     </Typography>
                 )}
             </Grid>
