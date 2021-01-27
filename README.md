@@ -21,7 +21,7 @@
 
 ### Could be added... or maybe in the future
 
-- [ ] Better audio lecto (with custom buttons, etc.)
+- [ ] Better audio lector (with custom buttons, etc.)
 - [ ] A better responsive system/card
 - [ ] Only read one track at a time.
 - [ ] A nodeJS server to serve as a custom webservice (depending on itunes api)
