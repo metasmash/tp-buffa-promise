@@ -5,16 +5,22 @@ import {
     Input,
     Typography,
     CircularProgress,
+    ThemeProvider,
+    responsiveFontSizes,
+    createMuiTheme,
 } from '@material-ui/core'
 import { getMusicFromSearch } from './itunesApiConsummer/getSongFromTitle'
 import _ from 'lodash'
+import { css } from './App.css'
 import { Card } from './Components'
 
-function App() {
+const App = () => {
     const [terms, setTerms] = useState('')
     const [search, setSearch] = useState([])
     const [isLoading, setIsLoading] = useState(false)
     const [firstAttempt, setFirstAttempt] = useState(true)
+
+    const theme = responsiveFontSizes(createMuiTheme())
 
     const fetchData = async () => {
         await setFirstAttempt(false)
@@ -44,28 +50,10 @@ function App() {
                 direction="row"
                 justify="center"
                 alignItems="center"
-                style={{
-                    paddingTop: 50,
-                    paddingBottom: 20,
-                    margin: 'auto',
-                    background:
-                        'linear-gradient(0deg, rgba(34,193,195,1) 28%, rgba(45,175,253,1) 100%)',
-                    position: 'sticky',
-                    top: 0,
-                    zIndex: 6,
-                    boxShadow: '0px 15px 14px 0px rgba(0,0,0,0.5)',
-                }}
+                style={css.grid}
             >
                 <Button
-                    style={{
-                        position: 'absolute',
-                        width: 200,
-                        right: 5,
-                        top: 3,
-                        borderRadius: 100,
-                        background:
-                            'linear-gradient(0deg, rgba(221,237,11,0.23853291316526615) 20%, rgba(29,29,29,1) 100%)',
-                    }}
+                    style={css.searchButton}
                     variant="contained"
                     color="primary"
                     href="https://github.com/metasmash/tp-buffa-promise/"
@@ -74,20 +62,14 @@ function App() {
                 >
                     Github repo
                 </Button>
-                <Typography
-                    style={{ marginBottom: 20 }}
-                    component="h3"
-                    variant="h3"
-                >
-                    Welcome to iTunes api client.
-                </Typography>
+                <ThemeProvider theme={theme}>
+                    <Typography component="h3" variant="h3">
+                        Welcome to iTunes api client.
+                    </Typography>
+                </ThemeProvider>
                 <Input
                     type="text"
-                    style={{
-                        backgroundColor: 'white',
-                        width: '80%',
-                        paddingLeft: 20,
-                    }}
+                    style={css.input}
                     value={terms}
                     onChange={(x) => setTerms(x.target.value)}
                     onKeyPress={(x) => {
@@ -115,17 +97,25 @@ function App() {
                 style={{ marginTop: 100, marginBottom: 50 }}
             >
                 {firstAttempt ? (
-                    <Typography color="primary" variant="h3">
-                        Search a music (artist, track name,...)
-                    </Typography>
+                    <ThemeProvider theme={theme}>
+                        <Typography color="primary" variant="h3">
+                            Search a music (artist, track name,...)
+                        </Typography>
+                    </ThemeProvider>
                 ) : isLoading ? (
                     <CircularProgress />
                 ) : !_.isEmpty(search) ? (
-                    _.map(search, (x, key) => <Card key={key} {...x} />)
+                    _.map(search, (x, key) => (
+                        <Grid key={key} style={{ width: '100%', flexGrow: 1 }}>
+                            <Card {...x} />
+                        </Grid>
+                    ))
                 ) : (
-                    <Typography color="error" variant="h3">
-                        No music found :'(
-                    </Typography>
+                    <ThemeProvider theme={theme}>
+                        <Typography color="error" variant="h3">
+                            No music found :'(
+                        </Typography>
+                    </ThemeProvider>
                 )}
             </Grid>
         </div>
