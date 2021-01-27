@@ -45,79 +45,84 @@ const App = () => {
 
     return (
         <div style={{ height: '100%' }}>
-            <Grid
-                container
-                direction="row"
-                justify="center"
-                alignItems="center"
-                style={css.grid}
-            >
-                <Button
-                    style={css.searchButton}
-                    variant="contained"
-                    color="primary"
-                    href="https://github.com/metasmash/tp-buffa-promise/"
-                    target="_blank"
-                    rel="noreferrer"
+            <ThemeProvider theme={theme}>
+                <Grid
+                    container
+                    direction="row"
+                    justify="center"
+                    alignItems="center"
+                    style={css.grid}
                 >
-                    Github repo
-                </Button>
-                <ThemeProvider theme={theme}>
-                    <Typography component="h3" variant="h3">
-                        Welcome to iTunes api client.
-                    </Typography>
-                </ThemeProvider>
-                <Input
-                    type="text"
-                    style={css.input}
-                    value={terms}
-                    onChange={(x) => setTerms(x.target.value)}
-                    onKeyPress={(x) => {
-                        if (x.key === 'Enter') {
-                            fetchData().then(console.log)
-                        }
-                    }}
-                />
-                <Button
-                    variant="contained"
-                    color="primary"
-                    style={{ height: 32 }}
-                    onClick={() => {
-                        fetchData().then(console.log)
-                    }}
-                >
-                    Search
-                </Button>
-            </Grid>
-            <Grid
-                container
-                direction="row"
-                justify="center"
-                alignItems="center"
-                style={{ marginTop: 100, marginBottom: 50 }}
-            >
-                {firstAttempt ? (
+                    <Button
+                        style={css.searchButton}
+                        variant="contained"
+                        color="primary"
+                        href="https://github.com/metasmash/tp-buffa-promise/"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        Github repo
+                    </Button>
                     <ThemeProvider theme={theme}>
-                        <Typography color="primary" variant="h3">
-                            Search a music (artist, track name,...)
+                        <Typography component="h3" variant="h3">
+                            Welcome to iTunes api client.
                         </Typography>
                     </ThemeProvider>
-                ) : isLoading ? (
-                    <CircularProgress />
-                ) : !_.isEmpty(search) ? (
-                    _.map(search, (x, key) => (
-                        <Grid key={key} style={{ width: '100%', flexGrow: 1 }}>
-                            <Card {...x} />
-                        </Grid>
-                    ))
-                ) : (
-                    <ThemeProvider theme={theme}>
+                    <Input
+                        type="text"
+                        style={css.input}
+                        value={terms}
+                        onChange={(x) => setTerms(x.target.value)}
+                        onKeyPress={(x) => {
+                            if (x.key === 'Enter') {
+                                fetchData().then(console.log)
+                            }
+                        }}
+                    />
+                    <Button
+                        variant="contained"
+                        color="primary"
+                        style={{ height: 32 }}
+                        onClick={() => {
+                            fetchData().then(console.log)
+                        }}
+                    >
+                        Search
+                    </Button>
+                </Grid>
+                <Grid
+                    container
+                    direction="row"
+                    justify="center"
+                    alignItems="center"
+                    style={{ marginTop: 100, marginBottom: 50 }}
+                >
+                    {firstAttempt ? (
+                        <ThemeProvider theme={theme}>
+                            <Typography color="primary" variant="h3">
+                                Search a music (artist, track name,...)
+                            </Typography>
+                        </ThemeProvider>
+                    ) : isLoading ? (
+                        <CircularProgress />
+                    ) : !_.isEmpty(search) ? (
+                        _.map(search, (x, key) => (
+                            <ThemeProvider theme={theme}>
+                                <Grid
+                                    key={key}
+                                    style={{ width: '100%', flexGrow: 1 }}
+                                >
+                                    <Card {...x} />
+                                </Grid>
+                            </ThemeProvider>
+                        ))
+                    ) : (
                         <Typography color="error" variant="h3">
                             No music found :'(
                         </Typography>
-                    </ThemeProvider>
-                )}
-            </Grid>
+                    )}
+                </Grid>
+            </ThemeProvider>
         </div>
     )
 }

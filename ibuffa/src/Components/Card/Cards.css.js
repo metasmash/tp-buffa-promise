@@ -5,9 +5,9 @@ export const useStyles = makeStyles(() => ({
         display: 'flex',
         justifyContent: 'space-between',
         marginTop: 30,
-        marginLeft: 10,
+        marginLeft: 'auto',
+        marginRight: 'auto',
         height: 170,
-        width: 700,
     },
     details: {
         display: 'flex',
@@ -15,6 +15,7 @@ export const useStyles = makeStyles(() => ({
     },
     content: {
         flex: '1 0 auto',
+        maxWidth: 300,
     },
     cover: {
         width: 157,
