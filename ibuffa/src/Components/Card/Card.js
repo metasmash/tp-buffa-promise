@@ -4,7 +4,7 @@ import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
 import { Audio } from '../../Components'
 import Typography from '@material-ui/core/Typography'
-import {  Tooltip } from '@material-ui/core'
+import { Tooltip } from '@material-ui/core'
 import { useStyles } from './Cards.css'
 
 const MediaControlCard = ({
