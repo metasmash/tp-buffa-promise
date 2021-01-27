@@ -48,7 +48,8 @@ function App() {
                     paddingTop: 50,
                     paddingBottom: 20,
                     margin: 'auto',
-                    backgroundColor: '#3d6e94',
+                    background:
+                        'linear-gradient(0deg, rgba(34,193,195,1) 28%, rgba(45,175,253,1) 100%)',
                     position: 'sticky',
                     top: 0,
                     zIndex: 6,
@@ -59,8 +60,11 @@ function App() {
                     style={{
                         position: 'absolute',
                         width: 200,
-                        right: 0,
-                        top: 0,
+                        right: 5,
+                        top: 3,
+                        borderRadius: 100,
+                        background:
+                            'linear-gradient(0deg, rgba(221,237,11,0.23853291316526615) 20%, rgba(29,29,29,1) 100%)',
                     }}
                     variant="contained"
                     color="primary"
