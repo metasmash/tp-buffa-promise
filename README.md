@@ -17,6 +17,7 @@
 - [x] Truncate long name (on mouse over, a tooltip with the full track name appear)
 - [x] sticky header
 - [x] Fetch and spread more datas than expected
+- [x] Deployed on https://ibuffa.tk/
 
 ### Could be added... or maybe in the future
 
