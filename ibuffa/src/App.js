@@ -83,7 +83,11 @@ function App() {
                 </Typography>
                 <Input
                     type="text"
-                    style={{ backgroundColor: 'white', width: '80%' }}
+                    style={{
+                        backgroundColor: 'white',
+                        width: '80%',
+                        paddingLeft: 20,
+                    }}
                     value={terms}
                     onChange={(x) => setTerms(x.target.value)}
                     onKeyPress={(x) => {
