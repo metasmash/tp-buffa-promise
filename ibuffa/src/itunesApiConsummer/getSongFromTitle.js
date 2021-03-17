@@ -12,7 +12,10 @@ const params = (term) => ({ country: 'fr', media: 'music', term })
 export const getMusicFromSearch = async (search) => {
     try {
         const { data } = await formatSearch(search).then((x) =>
-            axios.get(baseURL, { withCredentials: true, ...params(search) })
+            axios.get(baseURL, {
+                withCredentials: true,
+                params: params(search),
+            })
         )
 
         return _.map(data.results, destructureResults)
