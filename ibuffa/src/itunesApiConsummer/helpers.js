@@ -1,6 +1,6 @@
 import _ from 'lodash'
 
-export const formatSearch = async (search) => _.join(_.split(search, ' '), '+')
+export const formatSearch = async (search) => _.join(_.split(search.replace(/  +/g, ' '), ' '), '+')
 
 export const destructureResults = (results) =>
     (({
