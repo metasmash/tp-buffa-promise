@@ -2,15 +2,17 @@ import axios from 'axios'
 import _ from 'lodash'
 import { destructureResults, formatSearch } from './helpers'
 
-const baseURL = 'https://itunes.apple.com/search?country=fr&media=music&term='
+const baseURL = 'https://itunes.apple.com/search?'
 
 //example of term
 //const term='the+pot'
 
+const params = (term) => {country:'fr',media:'music',term}
+
 export const getMusicFromSearch = async (search) => {
     try {
         const { data } = await formatSearch(search).then((x) =>
-            axios.get(`${baseURL}${x}`, { withCredentials: true })
+            axios.get(baseURL, { withCredentials: true, params(search) })
         )
 
         return _.map(data.results, destructureResults)
